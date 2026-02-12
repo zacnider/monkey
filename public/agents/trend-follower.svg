@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg)"/>
+  <!-- Uptrend line -->
+  <path d="M 18 88 L 36 72 L 50 76 L 64 56 L 78 60 L 92 36 L 104 28" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+  <!-- Area fill -->
+  <path d="M 18 88 L 36 72 L 50 76 L 64 56 L 78 60 L 92 36 L 104 28 L 104 92 L 18 92 Z" fill="white" opacity="0.12"/>
+  <!-- Moving average -->
+  <path d="M 18 84 Q 40 74, 60 66 Q 80 54, 104 36" stroke="white" stroke-width="1.5" fill="none" stroke-dasharray="4 4" opacity="0.5"/>
+  <!-- Arrow at tip -->
+  <polygon points="104,28 96,26 100,34" fill="white" opacity="0.9"/>
+  <!-- Data dots -->
+  <circle cx="36" cy="72" r="3" fill="white" opacity="0.7"/>
+  <circle cx="64" cy="56" r="3" fill="white" opacity="0.7"/>
+  <circle cx="92" cy="36" r="3" fill="white" opacity="0.7"/>
+</svg>

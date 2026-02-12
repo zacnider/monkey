@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#BE185D"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg)"/>
+  <!-- Reverse arrows (circular) -->
+  <path d="M 72 36 A 24 24 0 0 1 72 84" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <path d="M 48 84 A 24 24 0 0 1 48 36" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <!-- Arrow tips -->
+  <polygon points="72,84 78,78 66,78" fill="white" opacity="0.9"/>
+  <polygon points="48,36 42,42 54,42" fill="white" opacity="0.9"/>
+  <!-- Center dot -->
+  <circle cx="60" cy="60" r="4" fill="white" opacity="0.6"/>
+  <!-- Small counter indicators -->
+  <path d="M 28 42 L 22 48" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M 28 42 L 34 48" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M 92 78 L 86 72" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M 92 78 L 98 72" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+</svg>

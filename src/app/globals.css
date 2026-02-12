@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+/* ─── Dark theme (default) ───────────────────────────────── */
+@theme {
+  --color-background: #0a0a0f;
+  --color-surface: #12121a;
+  --color-surface-hover: #1a1a28;
+  --color-border: #2a2a3a;
+  --color-border-bright: #3a3a4f;
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #8888a0;
+  --color-text-muted: #555570;
+  --color-primary: #8b5cf6;
+  --color-primary-hover: #7c3aed;
+  --color-primary-dim: #6d28d9;
+  --color-profit: #22c55e;
+  --color-profit-dim: #16a34a;
+  --color-loss: #ef4444;
+  --color-loss-dim: #dc2626;
+  --color-mkey: #f59e0b;
+  --color-mkey-dim: #d97706;
+  --color-warning: #eab308;
+  --color-info: #3b82f6;
+
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ─── Light theme overrides ──────────────────────────────── */
+[data-theme="light"] {
+  --color-background: #f8f9fc;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f0f1f5;
+  --color-border: #e2e4ea;
+  --color-border-bright: #c8cad4;
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #64648a;
+  --color-text-muted: #9898b0;
+  --color-primary: #7c3aed;
+  --color-primary-hover: #6d28d9;
+  --color-primary-dim: #5b21b6;
+  --color-profit: #16a34a;
+  --color-profit-dim: #15803d;
+  --color-loss: #dc2626;
+  --color-loss-dim: #b91c1c;
+  --color-mkey: #d97706;
+  --color-mkey-dim: #b45309;
+  --color-warning: #ca8a04;
+  --color-info: #2563eb;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-bright);
+}
+
+/* Number font */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-mkey) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects */
+.glow-profit {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.15);
+}
+.glow-loss {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.15);
+}
+.glow-primary {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+.glow-mkey {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+}
+
+/* Light theme: softer glows */
+[data-theme="light"] .glow-profit {
+  box-shadow: 0 0 20px rgba(22, 163, 74, 0.1);
+}
+[data-theme="light"] .glow-loss {
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.1);
+}
+[data-theme="light"] .glow-primary {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.1);
+}
+[data-theme="light"] .glow-mkey {
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.1);
+}
+
+/* Animate pulse for live indicators */
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.animate-pulse-live {
+  animation: pulse-live 2s ease-in-out infinite;
+}
+
+/* Ticker animation */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker-scroll 30s linear infinite;
+}

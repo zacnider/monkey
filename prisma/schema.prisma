@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Agent {
+  id               String         @id @default(cuid())
+  name             String         @unique
+  slug             String         @unique
+  personality      String
+  avatar           String
+  walletAddress    String         @unique
+  strategy         String
+  riskLevel        String
+  isActive         Boolean        @default(true)
+  totalDeposited   String         @default("0")
+  totalPnl         String         @default("0")
+  totalDistributed String         @default("0")
+  mkeyBalance      String         @default("0")
+  monBalance       String         @default("0")
+  winCount         Int            @default(0)
+  lossCount        Int            @default(0)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  logs             AgentLog[]
+  distributions    Distribution[]
+  donations        Donation[]
+  holdings         Holding[]
+  pnlSnapshots     PnlSnapshot[]
+  trades           Trade[]
+}
+
+model Trade {
+  id           String   @id @default(cuid())
+  agentId      String
+  tokenAddress String
+  tokenSymbol  String
+  tokenName    String
+  type         String
+  amountIn     String
+  amountOut    String
+  priceAtTrade String
+  txHash       String   @unique
+  pnl          String?
+  reason       String
+  signal       String?
+  llmApproval  Boolean?
+  createdAt    DateTime @default(now())
+  agent        Agent    @relation(fields: [agentId], references: [id])
+
+  @@index([agentId, createdAt])
+}
+
+model Holding {
+  id            String   @id @default(cuid())
+  agentId       String
+  tokenAddress  String
+  tokenSymbol   String
+  tokenName     String
+  amount        String
+  costBasis     String
+  currentValue  String   @default("0")
+  unrealizedPnl String   @default("0")
+  acquiredAt    DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  agent         Agent    @relation(fields: [agentId], references: [id])
+
+  @@unique([agentId, tokenAddress])
+}
+
+model Donation {
+  id           String   @id @default(cuid())
+  agentId      String
+  donorAddress String
+  amount       String
+  txHash       String   @unique
+  createdAt    DateTime @default(now())
+  agent        Agent    @relation(fields: [agentId], references: [id])
+
+  @@index([agentId])
+  @@index([donorAddress])
+}
+
+model Distribution {
+  id               String   @id @default(cuid())
+  agentId          String
+  recipientAddress String
+  amount           String
+  txHash           String?
+  status           String   @default("pending")
+  createdAt        DateTime @default(now())
+  agent            Agent    @relation(fields: [agentId], references: [id])
+
+  @@index([agentId])
+  @@index([recipientAddress])
+}
+
+model AgentLog {
+  id        String   @id @default(cuid())
+  agentId   String
+  type      String
+  message   String
+  data      String?
+  createdAt DateTime @default(now())
+  agent     Agent    @relation(fields: [agentId], references: [id])
+
+  @@index([agentId, createdAt])
+}
+
+model PnlSnapshot {
+  id         String   @id @default(cuid())
+  agentId    String
+  pnl        String
+  monBalance String
+  timestamp  DateTime @default(now())
+  agent      Agent    @relation(fields: [agentId], references: [id])
+
+  @@index([agentId, timestamp])
+}

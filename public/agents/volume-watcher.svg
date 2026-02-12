@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg)"/>
+  <!-- Volume bars -->
+  <rect x="22" y="72" width="8" height="20" rx="2" fill="white" opacity="0.4"/>
+  <rect x="34" y="60" width="8" height="32" rx="2" fill="white" opacity="0.5"/>
+  <rect x="46" y="48" width="8" height="44" rx="2" fill="white" opacity="0.6"/>
+  <rect x="58" y="34" width="8" height="58" rx="2" fill="white" opacity="0.8"/>
+  <rect x="70" y="42" width="8" height="50" rx="2" fill="white" opacity="0.7"/>
+  <rect x="82" y="28" width="8" height="64" rx="2" fill="white" opacity="0.95"/>
+  <rect x="94" y="52" width="8" height="40" rx="2" fill="white" opacity="0.55"/>
+  <!-- Eye/magnifier -->
+  <circle cx="82" cy="30" r="0" fill="none"/>
+  <!-- Rising trend arrow -->
+  <path d="M 22 78 L 58 40 L 82 34" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="4 3" opacity="0.5"/>
+  <polygon points="82,28 88,36 78,36" fill="white" opacity="0.5"/>
+</svg>

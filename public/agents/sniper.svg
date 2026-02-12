@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4338CA"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg)"/>
+  <!-- Scope outer ring -->
+  <circle cx="60" cy="58" r="28" stroke="white" stroke-width="2.5" fill="none" opacity="0.9"/>
+  <!-- Scope inner ring -->
+  <circle cx="60" cy="58" r="14" stroke="white" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <!-- Crosshair lines (not touching center) -->
+  <line x1="60" y1="24" x2="60" y2="40" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+  <line x1="60" y1="76" x2="60" y2="92" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+  <line x1="26" y1="58" x2="42" y2="58" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+  <line x1="78" y1="58" x2="94" y2="58" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+  <!-- Center precision dot -->
+  <circle cx="60" cy="58" r="3" fill="#F87171" opacity="0.95"/>
+  <!-- Graduation meter -->
+  <path d="M 32 96 L 88 96" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  <path d="M 32 96 L 72 96" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="72" cy="96" r="3" fill="white" opacity="0.8"/>
+  <text x="44" y="104" font-size="7" fill="white" opacity="0.4" font-family="monospace">GRAD</text>
+</svg>

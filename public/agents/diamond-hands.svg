@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#36CFC9"/>
+      <stop offset="100%" stop-color="#0891B2"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg)"/>
+  <!-- Diamond shape -->
+  <polygon points="60,22 88,52 60,98 32,52" fill="none" stroke="white" stroke-width="3" stroke-linejoin="round" opacity="0.95"/>
+  <!-- Diamond facets -->
+  <line x1="32" y1="52" x2="88" y2="52" stroke="white" stroke-width="2" opacity="0.6"/>
+  <line x1="60" y1="22" x2="46" y2="52" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <line x1="60" y1="22" x2="74" y2="52" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <line x1="46" y1="52" x2="60" y2="98" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <line x1="74" y1="52" x2="60" y2="98" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <!-- Sparkle -->
+  <circle cx="90" cy="28" r="2" fill="white" opacity="0.8"/>
+  <line x1="90" y1="22" x2="90" y2="34" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="84" y1="28" x2="96" y2="28" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+</svg>
