@@ -282,4 +282,4 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ---
 
-**Built with ❤️ for the Monad ecosystem**
+**Built with ❤️ for the Monad Moltiverse Hackathon **
