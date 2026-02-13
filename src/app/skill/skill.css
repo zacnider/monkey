@@ -1,0 +1,142 @@
+.skill-content {
+  color: #e0e0e0;
+}
+
+.skill-content h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skill-content h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.skill-content h3 {
+  color: #e9d5ff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.skill-content p {
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  color: #d1d5db;
+}
+
+.skill-content strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.skill-content a {
+  color: #a855f7;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.skill-content a:hover {
+  color: #ec4899;
+  border-bottom-color: #ec4899;
+}
+
+.skill-content code {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: #e9d5ff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.skill-content pre {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.skill-content pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #e9d5ff;
+  font-size: 0.875rem;
+}
+
+.skill-content ul,
+.skill-content ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.skill-content li {
+  margin: 0.5rem 0;
+  color: #d1d5db;
+}
+
+.skill-content blockquote {
+  border-left: 4px solid #a855f7;
+  font-style: italic;
+  color: #c4b5fd;
+  background: rgba(168, 85, 247, 0.05);
+  padding: 1rem 1rem 1rem 1.5rem;
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+}
+
+.skill-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.skill-content thead {
+  background: rgba(168, 85, 247, 0.1);
+}
+
+.skill-content th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+}
+
+.skill-content td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+  color: #d1d5db;
+}
+
+.skill-content tbody tr:hover {
+  background: rgba(168, 85, 247, 0.05);
+}
+
+.skill-content hr {
+  border: none;
+  border-top: 1px solid rgba(168, 85, 247, 0.2);
+  margin: 2.5rem 0;
+}

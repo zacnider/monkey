@@ -155,9 +155,9 @@ export function regimeThresholdAdjustment(
 ): number {
   switch (regime) {
     case "bull":
-      return Math.max(40, baseThreshold - 10); // Easier to pass in bull market
+      return Math.max(85, baseThreshold - 5); // STRENGTHENED: only slight reduction in bull (was -10, now -5)
     case "bear":
-      return Math.min(80, baseThreshold + 10); // Harder to pass in bear market
+      return Math.min(95, baseThreshold + 15); // STRENGTHENED: much harder in bear (was +10, now +15)
     case "sideways":
     default:
       return baseThreshold;

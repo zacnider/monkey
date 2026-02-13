@@ -126,10 +126,10 @@ export const TRADE_CONFIG = {
   MAX_TRADE_AMOUNT: "1.0",     // Maximum MON per trade
   SLIPPAGE_BPS: 500n,          // 5% slippage tolerance
   DEADLINE_SECONDS: 300,       // 5 minutes
-  SIGNAL_THRESHOLD: 75,        // Minimum signal score — raised from 60 to be more selective
+  SIGNAL_THRESHOLD: 50,        // Minimum signal score (LOW VOLUME: let quality filter do the work)
   PROFIT_DONOR_SHARE: 80,      // 80% of profits to donors
   PROFIT_MKEY_SHARE: 20,       // 20% of profits to buy MKEY
-  MAX_HOLDINGS_PER_AGENT: 2,   // Max tokens per agent (reduced from 5 — focus on quality)
-  TRADE_CYCLE_INTERVAL: 60000, // 1 minute between trade cycles
+  MAX_HOLDINGS_PER_AGENT: 1,   // Max tokens per agent (reduced from 2 — focus on best opportunity)
+  TRADE_CYCLE_INTERVAL: 30000, // PHASE 3: 30 seconds (was 5min) - MEV-style fast reaction
   DISTRIBUTION_INTERVAL: 21600000, // 6 hours between distributions
 } as const;

@@ -15,6 +15,7 @@ const NAV_ITEMS = [
   { href: "/leaderboard", label: "Leaderboard" },
   { href: "/earnings", label: "Earnings" },
   { href: "/live", label: "Live Feed" },
+  { href: "/skill", label: "About" },
 ];
 
 export function Header() {

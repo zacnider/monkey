@@ -3,16 +3,19 @@ import { formatEther } from "viem";
 import type { MarketSignal } from "./signal-engine";
 import type { MarketRegime } from "./market-regime";
 
-let groqClient: OpenAI | null = null;
+let llmClient: OpenAI | null = null;
 
 function getLLMClient(): OpenAI {
-  if (!groqClient) {
-    groqClient = new OpenAI({
-      apiKey: process.env.GROQ_API_KEY,
-      baseURL: "https://api.groq.com/openai/v1",
-    });
+  if (!llmClient) {
+    // Primary: OpenRouter, Fallback: Groq
+    const apiKey = process.env.OPENROUTER_API_KEY || process.env.GROQ_API_KEY;
+    const baseURL = process.env.OPENROUTER_API_KEY
+      ? "https://openrouter.ai/api/v1"
+      : "https://api.groq.com/openai/v1";
+
+    llmClient = new OpenAI({ apiKey, baseURL });
   }
-  return groqClient;
+  return llmClient;
 }
 
 interface LLMDecision {
@@ -142,8 +145,13 @@ Should you ${action} this token? Consider your recent performance and the curren
 {"approved": true/false, "reasoning": "brief 1-2 sentence explanation"}`;
 
   try {
+    // Use OpenRouter model if OPENROUTER_API_KEY is set, otherwise Groq
+    const model = process.env.OPENROUTER_API_KEY
+      ? "meta-llama/llama-3.1-8b-instruct" // Fast, cheap (~$0.05/1M tokens), good for trading decisions
+      : "llama-3.3-70b-versatile"; // Groq fallback
+
     const response = await getLLMClient().chat.completions.create({
-      model: "llama-3.3-70b-versatile",
+      model,
       messages: [
         { role: "system", content: personalityPrompt },
         { role: "user", content: userPrompt },
@@ -165,9 +173,9 @@ Should you ${action} this token? Consider your recent performance and the curren
     };
   } catch (error) {
     console.error("LLM confirmation failed:", error);
-    // Fallback: approve if signal score is high enough
+    // Fallback: approve ONLY if signal score is very high (STRENGTHENED from 75 to 85)
     return {
-      approved: signal.score >= 75,
+      approved: signal.score >= 85,
       reasoning: `LLM unavailable - fallback decision based on signal score ${signal.score}`,
     };
   }
